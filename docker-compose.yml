@@ -1,0 +1,19 @@
+services: 
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 1232:8080
+  db:
+    image: postgres:16
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - go-server-practice:/var/lib/postgresql/data
+volumes:
+  go-server-practice:
