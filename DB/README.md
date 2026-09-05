@@ -7,5 +7,5 @@ DBの管理をする。一旦モノレポ構成だが、規模が大きくなっ
 
 ```
 docker-compose up
-sql-migrate up
+sql-migrate up -env local -config ./dbconfig.yml
 ```
